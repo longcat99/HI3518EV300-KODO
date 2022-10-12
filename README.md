@@ -1,28 +1,24 @@
 # HI3518EV300-KODO
 
 #### 介绍
-HI3518EV300 u-boot kernel and rootfs
+HI3518EV300 Camera Board u-boot kernel and rootfs
 
 #### 软件架构
-软件架构说明
 
+U-Boot 2016.11
+Kernel Linux-4.9.37
+rootfs Busybox
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
 
 #### 参与贡献
 
 1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
+2.  新建 Feat 分支
 3.  提交代码
 4.  新建 Pull Request
 
