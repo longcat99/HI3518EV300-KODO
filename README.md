@@ -6,7 +6,9 @@ HI3518EV300 Camera Board u-boot kernel and rootfs
 #### 软件架构
 
 U-Boot 2016.11
+
 Kernel Linux-4.9.37
+
 rootfs Busybox
 
 #### 安装教程
