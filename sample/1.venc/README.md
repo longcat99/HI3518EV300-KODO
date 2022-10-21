@@ -41,38 +41,31 @@ vi wpa_supplicant.conf
 找到如下内容：
 
 ctrl_interface=/etc/Wireless/wpa_supplicant
-
 network={
-
 ssid="HI3518E"
-
 scan_ssid=1
-
 key_mgmt=WPA-EAP WPA-PSK IEEE8021X NONE
-
 pairwise=TKIP CCMP
-
 group=CCMP TKIP WEP104 WEP40
-
 psk="12345678"
-
 }
 
 修改：
 
 ssid="WIFI名"
-
 psk="WIFI密码"
 
 保存退出
 
 8、修改开发板的启动参数
+
 开发板连接串口，打开串口助手，上电等待开发板进入系统，修改启动参数来挂载NFS，具体如下：
 
 vi /etc/profile
 
 找到如下内容：
- cd /komod                                                            
+
+cd /komod                                                            
 insmod cfg80211.ko                                                   
 insmod hi3881.ko g_mode=0                                            
 ifconfig wlan0 192.168.148.200                      
