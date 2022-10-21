@@ -1,7 +1,7 @@
 该例程为视频编码示例
 由于开发板自带Flash容量小，需要将该例程放在Ubuntu下的NFS目录下，开发板挂载该目录，步骤如下：
 
-1.Ununtu搭建NFS服务器
+## 1.Ununtu搭建NFS服务器
 ①安装并开启 Ubuntu 中的 NFS 服务，使用如下命令安装 NFS 服务：
 sudo apt-get install nfs-kernel-server rpcbind
 
@@ -22,6 +22,7 @@ sudo /etc/init.d/nfs-kernel-server restart
 ifconfig
 然后下该例程复制到NFS目录下
 
+## 二、修改开发板配置
 ⑦开发板连接串口，打开串口助手，上电等待开发板进入系统，修改WIFI配置，命令如下：
 cd /etc/Wireless
 vi wpa_supplicant.conf
