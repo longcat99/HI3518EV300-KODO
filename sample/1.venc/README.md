@@ -2,7 +2,7 @@
 
 由于开发板自带Flash容量小，需要将该例程放在Ubuntu下的NFS目录下，开发板挂载该目录，步骤如下：
 
-## 一.Ununtu搭建NFS服务器
+## 一. Ununtu 搭建 NFS 服务器
 1、安装并开启 Ubuntu 中的 NFS 服务，使用如下命令安装 NFS 服务：
 
 sudo apt-get install nfs-kernel-server rpcbind
@@ -13,11 +13,11 @@ cd /home/用户名(根据自己的Ubuntu用户名修改)
 
 mkdir NFS
 
-3、使用如下命令打开 nfs 配置文件/etc/exports：
+3、使用如下命令打开 nfs 配置文件 /etc/exports：
 
 sudo vi /etc/exports
 
-4、打开/etc/exports 以后在最后面添加如下所示内容：
+4、打开 /etc/exports 以后在最后面添加如下所示内容：
 
 /home/qq(修改为自己的Ubuntu用户名)/NFS *(rw,sync,no_root_squash)
 
@@ -29,10 +29,10 @@ sudo /etc/init.d/nfs-kernel-server restart
 
 ifconfig
 
-然后下该例程复制到NFS目录下
+7、然后将该例程复制到 NFS 目录下
 
 ## 二、修改开发板配置
-7、开发板连接串口，打开串口助手，上电等待开发板进入系统，修改WIFI配置，命令如下：
+1、开发板连接串口，打开串口助手，上电等待开发板进入系统，修改 WIFI 配置，命令如下：
 
 cd /etc/Wireless
 
@@ -41,12 +41,19 @@ vi wpa_supplicant.conf
 找到如下内容：
 
 ctrl_interface=/etc/Wireless/wpa_supplicant
+
 network={
+
 ssid="HI3518E"
+
 scan_ssid=1
+
 key_mgmt=WPA-EAP WPA-PSK IEEE8021X NONE
+
 pairwise=TKIP CCMP
+
 group=CCMP TKIP WEP104 WEP40
+
 psk="12345678"
 }
 
@@ -57,9 +64,9 @@ psk="WIFI密码"
 
 保存退出
 
-8、修改开发板的启动参数
+2、修改开发板的启动参数
 
-开发板连接串口，打开串口助手，上电等待开发板进入系统，修改启动参数来挂载NFS，具体如下：
+开发板连接串口，打开串口助手，上电等待开发板进入系统，修改启动参数来挂载 NFS，具体如下：
 
 vi /etc/profile
 
@@ -92,6 +99,14 @@ mount -t nfs -o nolock 192.168.148.102:/home/qq/NFS /mnt    //挂载NFS
 
 reboot
 
-配置正确的话系统启动会自动连接WIFI并挂载NFS文件系统，然后进入/mnt目录下
+配置正确的话系统启动会自动连接WIFI并挂载NFS文件系统，然后进入 /mnt 目录下
 
 此时使用 ls 命令就可以看到 Ubuntu 系统 NFS 目录下的文件了
+
+使用如下命令运行例程(三步)：
+
+./sample_venc 1
+
+c
+
+0
